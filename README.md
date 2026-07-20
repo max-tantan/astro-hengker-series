@@ -1,46 +1,99 @@
-# Astro Starter Kit: Basics
+# Portfolio — Terminal/Hacker Theme
 
-```sh
-pnpm create astro@latest -- --template basics
-```
+A developer portfolio website with a hacker/terminal aesthetic, featuring Matrix rain animation, glitch effects, boot screen, and a fully responsive sidebar navigation.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+![Preview](public/readme-docs.png)
 
-## 🚀 Project Structure
+## Tech Stack
 
-Inside of your Astro project, you'll see the following folders and files:
+- [Astro](https://astro.build) — Static site generator
+- [React](https://react.dev) — UI components
+- [react-icons](https://react-icons.github.io/react-icons/) — Icon library
+- Vanilla CSS with custom properties (no framework)
+
+## Features
+
+- **Matrix Rain** — Canvas-based falling characters background animation
+- **Boot Screen** — Terminal-style system initialization sequence on load
+- **Glitch Text** — CSS-driven glitch effect on the hero heading
+- **Typing Animation** — Terminal commands animate as if being typed
+- **Scroll Reveal** — Elements fade/slide in on scroll via IntersectionObserver
+- **Count-up Stats** — Animated number counters in the About section
+- **Sidebar Navigation** — Fixed sidebar with active section tracking and mobile hamburger toggle
+- **Avatar Effects** — Glitch, scanline, hex overlay, and pulse ring on hover
+- **Contact Form** — Terminal-styled form with labeled inputs
+- **Responsive** — Adapts from desktop sidebar to mobile overlay menu
+
+## Project Structure
 
 ```text
 /
 ├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+│   ├── avatar.jpg
+│   ├── favicon.svg
+│   └── readme-docs.png
+├── src/
+│   ├── assets/
+│   │   ├── astro.svg
+│   │   └── background.svg
+│   ├── components/
+│   │   ├── ContactIcon.tsx      # GitHub, LinkedIn, Twitter, Email icons
+│   │   ├── MatrixRain.astro     # Canvas matrix rain background
+│   │   ├── ProjectIcon.tsx      # Bolt, Lock, Chart, Globe icons
+│   │   ├── Sidebar.astro        # Fixed sidebar with nav + profile
+│   │   └── Welcome.astro        # Default Astro welcome (unused)
+│   ├── layouts/
+│   │   └── Layout.astro         # HTML shell + global CSS variables
+│   └── pages/
+│       └── index.astro          # Main page with all 6 sections
+├── astro.config.mjs
+├── package.json
+├── tsconfig.json
+└── README.md
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## Sections
 
-## 🧞 Commands
+| # | Section      | Description                                  |
+|---|--------------|----------------------------------------------|
+| 01 | Home         | Hero with terminal-style intro + ASCII art   |
+| 02 | About        | Bio text + animated stat cards               |
+| 03 | Skills       | Categorized tech stack tags (4 categories)   |
+| 04 | Projects     | 4 project cards with icons + tech tags       |
+| 05 | Experience   | Timeline of work history                     |
+| 06 | Contact      | Terminal-styled form + social links           |
 
-All commands are run from the root of the project, from a terminal:
+## Getting Started
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
+### Prerequisites
 
-## 👀 Want to learn more?
+- Node.js >= 22.12.0
+- pnpm
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+### Install & Run
+
+```sh
+pnpm install
+pnpm dev
+```
+
+Open [http://localhost:4321](http://localhost:4321) in your browser.
+
+### Other Commands
+
+| Command          | Action                                   |
+| :--------------- | :--------------------------------------- |
+| `pnpm build`     | Build production site to `./dist/`       |
+| `pnpm preview`   | Preview the production build locally     |
+| `pnpm astro ...` | Run Astro CLI commands                   |
+
+## Customization
+
+- **Colors** — Edit CSS custom properties in `src/layouts/Layout.astro` (`:root` block)
+- **Content** — Modify text, projects, skills, and experience directly in `src/pages/index.astro`
+- **Avatar** — Replace `public/avatar.jpg` with your own photo
+- **Sections** — Add or remove sections in `index.astro` and update the sidebar nav array in `Sidebar.astro`
+
+## License
+
+MIT
