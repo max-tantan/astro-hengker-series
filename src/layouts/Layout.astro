@@ -1,0 +1,190 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+
+<style is:global>
+	:root {
+		--green: #00ff41;
+		--green-dim: #00cc33;
+		--green-dark: #008f11;
+		--green-glow: rgba(0, 255, 65, 0.3);
+		--green-subtle: rgba(0, 255, 65, 0.05);
+		--bg-primary: #0a0a0a;
+		--bg-secondary: #0d0d0d;
+		--bg-sidebar: #080808;
+		--bg-card: rgba(0, 255, 65, 0.03);
+		--border: rgba(0, 255, 65, 0.1);
+		--border-hover: rgba(0, 255, 65, 0.25);
+		--text-primary: #b0ffb0;
+		--text-dim: #3a7a3a;
+		--sidebar-width: 260px;
+		--font-mono: 'Fira Code', 'Share Tech Mono', ui-monospace, 'Cascadia Code', monospace;
+	}
+
+	*,
+	*::before,
+	*::after {
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+	}
+
+	html {
+		scroll-behavior: smooth;
+		scroll-padding-top: 0;
+	}
+
+	body {
+		font-family: var(--font-mono);
+		background: var(--bg-primary);
+		color: var(--text-primary);
+		line-height: 1.7;
+		overflow-x: hidden;
+		min-height: 100vh;
+	}
+
+	::selection {
+		background: var(--green);
+		color: #000;
+	}
+
+	::-webkit-scrollbar {
+		width: 6px;
+	}
+
+	::-webkit-scrollbar-track {
+		background: var(--bg-primary);
+	}
+
+	::-webkit-scrollbar-thumb {
+		background: var(--green-dark);
+		border-radius: 3px;
+	}
+
+	::-webkit-scrollbar-thumb:hover {
+		background: var(--green-dim);
+	}
+
+	a {
+		color: var(--green);
+		text-decoration: none;
+		transition: all 0.2s ease;
+	}
+
+	a:hover {
+		text-shadow: 0 0 8px var(--green-glow);
+	}
+
+	@keyframes blink {
+		0%, 50% { opacity: 1; }
+		51%, 100% { opacity: 0; }
+	}
+
+	@keyframes glitch {
+		0% { transform: translate(0); }
+		20% { transform: translate(-2px, 2px); }
+		40% { transform: translate(-2px, -2px); }
+		60% { transform: translate(2px, 2px); }
+		80% { transform: translate(2px, -2px); }
+		100% { transform: translate(0); }
+	}
+
+	@keyframes scanline {
+		0% { top: -100%; }
+		100% { top: 100%; }
+	}
+
+	@keyframes fadeInUp {
+		from {
+			opacity: 0;
+			transform: translateY(30px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	@keyframes typing {
+		from { width: 0; }
+		to { width: 100%; }
+	}
+
+	.section {
+		min-height: 100vh;
+		padding: 80px 60px 80px 40px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		position: relative;
+	}
+
+	.section-label {
+		font-size: 0.7rem;
+		color: var(--green-dark);
+		text-transform: uppercase;
+		letter-spacing: 4px;
+		margin-bottom: 8px;
+	}
+
+	.section-title {
+		font-size: clamp(1.8rem, 4vw, 2.8rem);
+		color: var(--green);
+		font-weight: 700;
+		margin-bottom: 40px;
+		position: relative;
+		display: inline-block;
+		width: fit-content;
+	}
+
+	.section-title::after {
+		content: '';
+		position: absolute;
+		bottom: -8px;
+		left: 0;
+		width: 60px;
+		height: 2px;
+		background: var(--green);
+		box-shadow: 0 0 10px var(--green-glow);
+	}
+
+	.section-title .cursor {
+		display: inline-block;
+		width: 2px;
+		height: 1em;
+		background: var(--green);
+		margin-left: 4px;
+		animation: blink 1s step-end infinite;
+		vertical-align: text-bottom;
+	}
+
+	@media (max-width: 768px) {
+		.section {
+			padding: 60px 20px;
+		}
+	}
+</style>

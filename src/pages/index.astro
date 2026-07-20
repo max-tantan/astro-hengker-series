@@ -1,0 +1,1201 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Sidebar from '../components/Sidebar.astro';
+import MatrixRain from '../components/MatrixRain.astro';
+---
+
+<Layout title="root@portfolio:~">
+	<MatrixRain />
+	<Sidebar />
+	<div class="scanline-overlay"></div>
+
+	<!-- BOOT SCREEN -->
+	<div class="boot-screen" id="boot-screen">
+		<div class="boot-lines">
+			<p class="boot-line" data-delay="0">[ OK ] Starting system...</p>
+			<p class="boot-line" data-delay="200">[ OK ] Loading kernel modules...</p>
+			<p class="boot-line" data-delay="400">[ OK ] Mounting filesystems...</p>
+			<p class="boot-line" data-delay="600">[ OK ] Starting network services...</p>
+			<p class="boot-line" data-delay="800">[ OK ] Initializing portfolio v3.0...</p>
+			<p class="boot-line" data-delay="1000">[ OK ] Loading developer profile...</p>
+			<p class="boot-line ready" data-delay="1300">&gt; system ready_</p>
+		</div>
+	</div>
+
+	<main class="main-content">
+		<!-- 01: HOME -->
+		<section id="home" class="section hero-section">
+			<div class="hero-content">
+				<div class="terminal-window reveal">
+					<div class="terminal-bar">
+						<span class="terminal-title">root@portfolio:~</span>
+					</div>
+					<div class="terminal-body">
+						<p class="terminal-line type-line" data-text="$ whoami">
+							<span class="prompt-symbol">$</span>
+							<span class="type-target">whoami</span>
+						</p>
+						<h1 class="glitch" data-text="John Doe">John Doe</h1>
+						<p class="terminal-line type-line" data-text="$ cat role.txt">
+							<span class="prompt-symbol">$</span>
+							<span class="type-target">cat role.txt</span>
+						</p>
+						<p class="role-text">
+							Full Stack Developer <span class="cursor">_</span>
+						</p>
+						<p class="terminal-line mt-sm type-line" data-text="$ cat motto.txt">
+							<span class="prompt-symbol">$</span>
+							<span class="type-target">cat motto.txt</span>
+						</p>
+						<p class="motto-text">
+							// building things that break the internet (in a good way)
+						</p>
+						<div class="hero-cta">
+							<a href="#projects" class="btn-primary">
+								<span>[</span> explore projects <span>]</span>
+							</a>
+							<a href="#contact" class="btn-secondary">
+								<span>[</span> contact me <span>]</span>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="ascii-art reveal" data-delay="400">
+<pre class="ascii-block">
+    _    ____ _____ _   _ ______   __
+   / \  |  _ \ ____| \ | |  _ \ \ / /
+  / _ \ | |_) |  _| |  \| | | | \ V /
+ / ___ \|  __/| |___| |\  | |_| || |
+/_/   \_\_|   |_____|_| \_|____/ |_|
+</pre>
+				</div>
+			</div>
+		</section>
+
+		<!-- 02: ABOUT -->
+		<section id="about" class="section">
+			<span class="section-label reveal">// section 02</span>
+			<h2 class="section-title reveal" data-delay="100">about<span class="cursor">_</span></h2>
+			<div class="about-grid">
+				<div class="about-text">
+					<p class="terminal-line type-line reveal" data-delay="200" data-text="$ cat about.md">
+						<span class="prompt-symbol">$</span>
+						<span class="type-target">cat about.md</span>
+					</p>
+					<div class="content-block reveal" data-delay="300">
+						<p>
+							Developer yang passionate dalam membangun produk digital.
+							Fokus di full-stack development dengan pengalaman di
+							backend systems dan frontend interfaces yang clean.
+						</p>
+						<p class="mt-sm">
+							Suka eksplorasi teknologi baru, contribute ke open source,
+							dan sesekali participate di CTF competitions. Percaya bahwa
+							good code adalah code yang bisa dibaca manusia, bukan cuma compiler.
+						</p>
+					</div>
+				</div>
+				<div class="about-stats">
+					<div class="stat-card reveal" data-delay="300">
+						<span class="stat-number" data-count="5">0</span><span class="stat-number">+</span>
+						<span class="stat-label">years coding</span>
+					</div>
+					<div class="stat-card reveal" data-delay="400">
+						<span class="stat-number" data-count="30">0</span><span class="stat-number">+</span>
+						<span class="stat-label">projects built</span>
+					</div>
+					<div class="stat-card reveal" data-delay="500">
+						<span class="stat-number" data-count="15">0</span><span class="stat-number">+</span>
+						<span class="stat-label">clients served</span>
+					</div>
+					<div class="stat-card reveal" data-delay="600">
+						<span class="stat-number">∞</span>
+						<span class="stat-label">cups of coffee</span>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- 03: SKILLS -->
+		<section id="skills" class="section">
+			<span class="section-label reveal">// section 03</span>
+			<h2 class="section-title reveal" data-delay="100">skills<span class="cursor">_</span></h2>
+			<div class="skills-grid">
+				<div class="skill-category reveal" data-delay="200">
+					<h3 class="category-title">
+						<span class="arrow">→</span> languages
+					</h3>
+					<div class="skill-tags">
+						<span class="tag pop-in" data-delay="300">JavaScript</span>
+						<span class="tag pop-in" data-delay="350">TypeScript</span>
+						<span class="tag pop-in" data-delay="400">Python</span>
+						<span class="tag pop-in" data-delay="450">Go</span>
+						<span class="tag pop-in" data-delay="500">Rust</span>
+						<span class="tag pop-in" data-delay="550">SQL</span>
+					</div>
+				</div>
+				<div class="skill-category reveal" data-delay="300">
+					<h3 class="category-title">
+						<span class="arrow">→</span> frameworks
+					</h3>
+					<div class="skill-tags">
+						<span class="tag pop-in" data-delay="400">React</span>
+						<span class="tag pop-in" data-delay="450">Next.js</span>
+						<span class="tag pop-in" data-delay="500">Astro</span>
+						<span class="tag pop-in" data-delay="550">Node.js</span>
+						<span class="tag pop-in" data-delay="600">FastAPI</span>
+						<span class="tag pop-in" data-delay="650">Django</span>
+					</div>
+				</div>
+				<div class="skill-category reveal" data-delay="400">
+					<h3 class="category-title">
+						<span class="arrow">→</span> tools & infra
+					</h3>
+					<div class="skill-tags">
+						<span class="tag pop-in" data-delay="500">Docker</span>
+						<span class="tag pop-in" data-delay="550">Kubernetes</span>
+						<span class="tag pop-in" data-delay="600">AWS</span>
+						<span class="tag pop-in" data-delay="650">Git</span>
+						<span class="tag pop-in" data-delay="700">Linux</span>
+						<span class="tag pop-in" data-delay="750">CI/CD</span>
+					</div>
+				</div>
+				<div class="skill-category reveal" data-delay="500">
+					<h3 class="category-title">
+						<span class="arrow">→</span> databases
+					</h3>
+					<div class="skill-tags">
+						<span class="tag pop-in" data-delay="600">PostgreSQL</span>
+						<span class="tag pop-in" data-delay="650">MongoDB</span>
+						<span class="tag pop-in" data-delay="700">Redis</span>
+						<span class="tag pop-in" data-delay="750">Elasticsearch</span>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- 04: PROJECTS -->
+		<section id="projects" class="section">
+			<span class="section-label reveal">// section 04</span>
+			<h2 class="section-title reveal" data-delay="100">projects<span class="cursor">_</span></h2>
+			<div class="projects-grid">
+				<article class="project-card reveal" data-delay="200">
+					<div class="card-header">
+						<span class="card-icon">⚡</span>
+						<div class="card-links">
+							<a href="#" class="card-link">source</a>
+							<a href="#" class="card-link">live ↗</a>
+						</div>
+					</div>
+					<h3 class="card-title">neural-api</h3>
+					<p class="card-desc">
+						High-performance REST API with ML-powered caching.
+						Handles 10k req/s with sub-50ms latency.
+					</p>
+					<div class="card-tags">
+						<span>Go</span>
+						<span>Redis</span>
+						<span>TensorFlow</span>
+					</div>
+				</article>
+
+				<article class="project-card reveal" data-delay="300">
+					<div class="card-header">
+						<span class="card-icon">🔐</span>
+						<div class="card-links">
+							<a href="#" class="card-link">source</a>
+							<a href="#" class="card-link">live ↗</a>
+						</div>
+					</div>
+					<h3 class="card-title">cryptovault</h3>
+					<p class="card-desc">
+						End-to-end encrypted file storage with zero-knowledge
+						architecture. Client-side encryption before upload.
+					</p>
+					<div class="card-tags">
+						<span>TypeScript</span>
+						<span>React</span>
+						<span>AES-256</span>
+					</div>
+				</article>
+
+				<article class="project-card reveal" data-delay="400">
+					<div class="card-header">
+						<span class="card-icon">📊</span>
+						<div class="card-links">
+							<a href="#" class="card-link">source</a>
+							<a href="#" class="card-link">live ↗</a>
+						</div>
+					</div>
+					<h3 class="card-title">dataflow</h3>
+					<p class="card-desc">
+						Real-time data pipeline visualization tool.
+						Monitor ETL jobs with live dashboards and alerts.
+					</p>
+					<div class="card-tags">
+						<span>Python</span>
+						<span>FastAPI</span>
+						<span>WebSockets</span>
+					</div>
+				</article>
+
+				<article class="project-card reveal" data-delay="500">
+					<div class="card-header">
+						<span class="card-icon">🌐</span>
+						<div class="card-links">
+							<a href="#" class="card-link">source</a>
+							<a href="#" class="card-link">live ↗</a>
+						</div>
+					</div>
+					<h3 class="card-title">netprobe</h3>
+					<p class="card-desc">
+						Network monitoring CLI with auto-discovery.
+						Pings, port scans, and generates topology maps.
+					</p>
+					<div class="card-tags">
+						<span>Rust</span>
+						<span>CLI</span>
+						<span>SQLite</span>
+					</div>
+				</article>
+			</div>
+		</section>
+
+		<!-- 05: EXPERIENCE -->
+		<section id="experience" class="section">
+			<span class="section-label reveal">// section 05</span>
+			<h2 class="section-title reveal" data-delay="100">experience<span class="cursor">_</span></h2>
+			<div class="timeline">
+				<div class="timeline-item reveal" data-delay="200">
+					<div class="timeline-marker"></div>
+					<div class="timeline-content">
+						<div class="timeline-header">
+							<h3>Senior Developer</h3>
+							<span class="timeline-company">@ TechCorp</span>
+						</div>
+						<span class="timeline-date">2023 — present</span>
+						<p class="timeline-desc">
+							Lead a team of 5 engineers. Architected microservices
+							infrastructure handling 1M+ daily requests.
+						</p>
+					</div>
+				</div>
+
+				<div class="timeline-item reveal" data-delay="350">
+					<div class="timeline-marker"></div>
+					<div class="timeline-content">
+						<div class="timeline-header">
+							<h3>Full Stack Developer</h3>
+							<span class="timeline-company">@ StartupXYZ</span>
+						</div>
+						<span class="timeline-date">2021 — 2023</span>
+						<p class="timeline-desc">
+							Built core product from 0 to 1. Shipped 3 major features
+							that increased user retention by 40%.
+						</p>
+					</div>
+				</div>
+
+				<div class="timeline-item reveal" data-delay="500">
+					<div class="timeline-marker"></div>
+					<div class="timeline-content">
+						<div class="timeline-header">
+							<h3>Backend Engineer</h3>
+							<span class="timeline-company">@ DataLab</span>
+						</div>
+						<span class="timeline-date">2019 — 2021</span>
+						<p class="timeline-desc">
+							Designed data pipelines processing 500GB daily.
+							Reduced infrastructure costs by 60% via optimization.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- 06: CONTACT -->
+		<section id="contact" class="section">
+			<span class="section-label reveal">// section 06</span>
+			<h2 class="section-title reveal" data-delay="100">contact<span class="cursor">_</span></h2>
+			<div class="contact-grid">
+				<div class="contact-terminal">
+					<div class="terminal-window reveal" data-delay="200">
+						<div class="terminal-bar">
+							<span class="terminal-title">send-message.sh</span>
+						</div>
+						<div class="terminal-body">
+							<p class="terminal-line type-line" data-text="$ ./send-message.sh --to "me"">
+								<span class="prompt-symbol">$</span>
+								<span class="type-target">./send-message.sh --to "me"</span>
+							</p>
+							<form class="contact-form" id="contact-form">
+								<div class="form-group reveal" data-delay="300">
+									<label>&gt; name:</label>
+									<input type="text" placeholder="your_name" required />
+								</div>
+								<div class="form-group reveal" data-delay="400">
+									<label>&gt; email:</label>
+									<input type="email" placeholder="you@domain.com" required />
+								</div>
+								<div class="form-group reveal" data-delay="500">
+									<label>&gt; message:</label>
+									<textarea placeholder="type your message here..." rows="4" required></textarea>
+								</div>
+								<button type="submit" class="btn-submit reveal" data-delay="600">
+									<span>[</span> send <span>]</span>
+								</button>
+							</form>
+						</div>
+					</div>
+				</div>
+				<div class="contact-links">
+					<h3 class="contact-links-title reveal" data-delay="200">
+						<span class="arrow">→</span> find me on
+					</h3>
+					<div class="link-list">
+						<a href="#" class="link-item reveal" data-delay="300">
+							<span class="link-icon">⌘</span>
+							<span>github.com/johndoe</span>
+						</a>
+						<a href="#" class="link-item reveal" data-delay="350">
+							<span class="link-icon">⌘</span>
+							<span>linkedin.com/in/johndoe</span>
+						</a>
+						<a href="#" class="link-item reveal" data-delay="400">
+							<span class="link-icon">⌘</span>
+							<span>twitter.com/johndoe</span>
+						</a>
+						<a href="#" class="link-item reveal" data-delay="450">
+							<span class="link-icon">⌘</span>
+							<span>hello@johndoe.dev</span>
+						</a>
+					</div>
+					<div class="pgp-info reveal" data-delay="500">
+						<p class="terminal-line">
+							<span class="prompt-symbol">$</span> cat pgp_key.txt
+						</p>
+						<p class="pgp-hash">Fingerprint: 4A2B 8C1D 3E5F 6A7B 9C0D</p>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+</Layout>
+
+<script>
+	function initAnimations() {
+		// === BOOT SCREEN ===
+		const bootScreen = document.getElementById('boot-screen');
+		const bootLines = document.querySelectorAll('.boot-line');
+
+		bootLines.forEach((line) => {
+			const delay = parseInt(line.getAttribute('data-delay') || '0');
+			setTimeout(() => {
+				(line as HTMLElement).classList.add('visible');
+			}, delay);
+		});
+
+		setTimeout(() => {
+			bootScreen?.classList.add('fade-out');
+			document.body.classList.add('booted');
+			setTimeout(() => {
+				bootScreen?.remove();
+				initScrollAnimations();
+				initTypingAnimations();
+				initCountUp();
+			}, 500);
+		}, 2000);
+
+		// === SCROLL REVEAL ===
+		function initScrollAnimations() {
+			const reveals = document.querySelectorAll('.reveal');
+
+			const observer = new IntersectionObserver(
+				(entries) => {
+					entries.forEach((entry) => {
+						if (entry.isIntersecting) {
+							const delay = parseInt(entry.target.getAttribute('data-delay') || '0');
+							setTimeout(() => {
+								entry.target.classList.add('visible');
+							}, delay);
+							observer.unobserve(entry.target);
+						}
+					});
+				},
+				{ threshold: 0.1 }
+			);
+
+			reveals.forEach((el) => observer.observe(el));
+		}
+
+		// === TYPING ANIMATION ===
+		function initTypingAnimations() {
+			const typeLines = document.querySelectorAll('.type-line');
+
+			const observer = new IntersectionObserver(
+				(entries) => {
+					entries.forEach((entry) => {
+						if (entry.isIntersecting && !entry.target.classList.contains('typed')) {
+							entry.target.classList.add('typed');
+							const target = entry.target.querySelector('.type-target');
+							if (!target) return;
+							const fullText = target.textContent || '';
+							target.textContent = '';
+							let i = 0;
+							const type = () => {
+								if (i < fullText.length) {
+									target.textContent += fullText[i];
+									i++;
+									setTimeout(type, 40 + Math.random() * 30);
+								}
+							};
+							type();
+							observer.unobserve(entry.target);
+						}
+					});
+				},
+				{ threshold: 0.5 }
+			);
+
+			typeLines.forEach((el) => observer.observe(el));
+		}
+
+		// === COUNT UP ===
+		function initCountUp() {
+			const counters = document.querySelectorAll('[data-count]');
+
+			const observer = new IntersectionObserver(
+				(entries) => {
+					entries.forEach((entry) => {
+						if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
+							entry.target.classList.add('counted');
+							const el = entry.target as HTMLElement;
+							const target = parseInt(el.getAttribute('data-count') || '0');
+							const duration = 1500;
+							const step = target / (duration / 16);
+							let current = 0;
+
+							const update = () => {
+								current += step;
+								if (current >= target) {
+									el.textContent = String(target);
+									return;
+								}
+								el.textContent = String(Math.floor(current));
+								requestAnimationFrame(update);
+							};
+							requestAnimationFrame(update);
+							observer.unobserve(entry.target);
+						}
+					});
+				},
+				{ threshold: 0.5 }
+			);
+
+			counters.forEach((el) => observer.observe(el));
+		}
+	}
+
+	document.addEventListener('DOMContentLoaded', initAnimations);
+</script>
+
+<style>
+	.main-content {
+		margin-left: var(--sidebar-width);
+		min-height: 100vh;
+	}
+
+	/* === BOOT SCREEN === */
+	.boot-screen {
+		position: fixed;
+		inset: 0;
+		z-index: 9999;
+		background: #000;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transition: opacity 0.5s ease, visibility 0.5s ease;
+	}
+
+	.boot-screen.fade-out {
+		opacity: 0;
+		visibility: hidden;
+	}
+
+	.boot-lines {
+		font-family: var(--font-mono);
+		font-size: 0.8rem;
+		color: var(--green-dark);
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+	}
+
+	.boot-line {
+		opacity: 0;
+		transform: translateY(4px);
+		transition: all 0.3s ease;
+	}
+
+	.boot-line.visible {
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	.boot-line.ready {
+		color: var(--green);
+		font-weight: 600;
+		text-shadow: 0 0 10px var(--green-glow);
+	}
+
+	/* === SCANLINE === */
+	.scanline-overlay {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		pointer-events: none;
+		z-index: 50;
+		background: repeating-linear-gradient(
+			0deg,
+			rgba(0, 0, 0, 0.03) 0px,
+			rgba(0, 0, 0, 0.03) 1px,
+			transparent 1px,
+			transparent 2px
+		);
+	}
+
+	/* === REVEAL ANIMATION === */
+	.reveal {
+		opacity: 0;
+		transform: translateY(24px);
+		transition: opacity 0.6s ease, transform 0.6s ease;
+	}
+
+	.reveal.visible {
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	/* === POP IN === */
+	.pop-in {
+		opacity: 0;
+		transform: scale(0.8) translateY(8px);
+		transition: opacity 0.4s ease, transform 0.4s ease;
+	}
+
+	.pop-in.visible {
+		opacity: 1;
+		transform: scale(1) translateY(0);
+	}
+
+	/* === HERO === */
+	.hero-section {
+		min-height: 100vh;
+	}
+
+	.hero-content {
+		display: flex;
+		flex-direction: column;
+		gap: 40px;
+		max-width: 800px;
+	}
+
+	.terminal-window {
+		border: 1px solid var(--border);
+		border-radius: 8px;
+		overflow: hidden;
+		background: rgba(0, 0, 0, 0.4);
+	}
+
+	.terminal-bar {
+		padding: 10px 16px;
+		background: rgba(0, 255, 65, 0.03);
+		border-bottom: 1px solid var(--border);
+		font-size: 0.7rem;
+		color: var(--text-dim);
+	}
+
+	.terminal-body {
+		padding: 24px;
+	}
+
+	.terminal-line {
+		font-size: 0.8rem;
+		color: var(--text-dim);
+		margin-bottom: 8px;
+	}
+
+	.prompt-symbol {
+		color: var(--green);
+		margin-right: 8px;
+	}
+
+	.type-target {
+		color: var(--text-dim);
+	}
+
+	.type-line.typed .type-target::after {
+		content: '|';
+		color: var(--green);
+		animation: blink 1s step-end infinite;
+		margin-left: 2px;
+	}
+
+	.hero-content h1 {
+		font-size: clamp(2.5rem, 6vw, 4rem);
+		font-weight: 700;
+		color: var(--green);
+		line-height: 1.1;
+		margin: 16px 0;
+		text-shadow: 0 0 40px var(--green-glow);
+	}
+
+	.glitch {
+		position: relative;
+	}
+
+	.glitch::before,
+	.glitch::after {
+		content: attr(data-text);
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	.glitch::before {
+		color: #ff0040;
+		animation: glitch 3s infinite;
+		clip-path: inset(0 0 60% 0);
+		opacity: 0.3;
+	}
+
+	.glitch::after {
+		color: #00ffff;
+		animation: glitch 3s infinite reverse;
+		clip-path: inset(40% 0 0 0);
+		opacity: 0.3;
+	}
+
+	.role-text {
+		font-size: 1.1rem;
+		color: var(--text-primary);
+		font-weight: 500;
+	}
+
+	.cursor {
+		color: var(--green);
+		animation: blink 1s step-end infinite;
+	}
+
+	.motto-text {
+		font-size: 0.8rem;
+		color: var(--text-dim);
+		font-style: italic;
+	}
+
+	.mt-sm {
+		margin-top: 16px;
+	}
+
+	.hero-cta {
+		display: flex;
+		gap: 16px;
+		margin-top: 32px;
+	}
+
+	.btn-primary,
+	.btn-secondary {
+		padding: 12px 24px;
+		font-size: 0.8rem;
+		font-family: var(--font-mono);
+		border: none;
+		cursor: pointer;
+		text-decoration: none;
+		transition: all 0.3s ease;
+	}
+
+	.btn-primary {
+		background: rgba(0, 255, 65, 0.1);
+		color: var(--green);
+		border: 1px solid var(--green-dark);
+	}
+
+	.btn-primary:hover {
+		background: rgba(0, 255, 65, 0.2);
+		box-shadow: 0 0 20px var(--green-glow);
+		text-shadow: none;
+	}
+
+	.btn-secondary {
+		background: transparent;
+		color: var(--text-dim);
+		border: 1px solid var(--border);
+	}
+
+	.btn-secondary:hover {
+		color: var(--green);
+		border-color: var(--green-dark);
+		text-shadow: none;
+	}
+
+	.ascii-art {
+		margin-top: 20px;
+	}
+
+	.ascii-block {
+		font-size: 0.55rem;
+		color: var(--green-dark);
+		line-height: 1.2;
+		opacity: 0.6;
+		overflow: hidden;
+	}
+
+	/* === ABOUT === */
+	.about-grid {
+		display: grid;
+		grid-template-columns: 1.5fr 1fr;
+		gap: 48px;
+		align-items: start;
+	}
+
+	.content-block {
+		margin-top: 16px;
+		font-size: 0.85rem;
+		color: var(--text-primary);
+		line-height: 1.9;
+	}
+
+	.about-stats {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 16px;
+	}
+
+	.stat-card {
+		border: 1px solid var(--border);
+		padding: 20px;
+		text-align: center;
+		background: var(--bg-card);
+		transition: all 0.3s ease;
+	}
+
+	.stat-card:hover {
+		border-color: var(--green-dark);
+		box-shadow: 0 0 15px rgba(0, 255, 65, 0.05);
+	}
+
+	.stat-number {
+		display: inline;
+		font-size: 2rem;
+		font-weight: 700;
+		color: var(--green);
+		text-shadow: 0 0 20px var(--green-glow);
+	}
+
+	.stat-label {
+		font-size: 0.7rem;
+		color: var(--text-dim);
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		margin-top: 4px;
+		display: block;
+	}
+
+	/* === SKILLS === */
+	.skills-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 32px;
+	}
+
+	.skill-category {
+		border: 1px solid var(--border);
+		padding: 24px;
+		background: var(--bg-card);
+		transition: border-color 0.3s ease;
+	}
+
+	.skill-category:hover {
+		border-color: var(--border-hover);
+	}
+
+	.category-title {
+		font-size: 0.85rem;
+		color: var(--green);
+		font-weight: 500;
+		margin-bottom: 16px;
+	}
+
+	.arrow {
+		color: var(--green);
+		margin-right: 8px;
+	}
+
+	.skill-tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 8px;
+	}
+
+	.tag {
+		font-size: 0.7rem;
+		padding: 6px 12px;
+		border: 1px solid var(--border);
+		color: var(--text-primary);
+		background: rgba(0, 255, 65, 0.02);
+		transition: all 0.3s ease;
+	}
+
+	.tag:hover {
+		border-color: var(--green-dark);
+		color: var(--green);
+		background: rgba(0, 255, 65, 0.05);
+	}
+
+	/* === PROJECTS === */
+	.projects-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 24px;
+	}
+
+	.project-card {
+		border: 1px solid var(--border);
+		padding: 28px;
+		background: var(--bg-card);
+		transition: all 0.3s ease;
+		position: relative;
+		overflow: hidden;
+	}
+
+	.project-card::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 2px;
+		background: linear-gradient(90deg, transparent, var(--green-dark), transparent);
+		transform: scaleX(0);
+		transition: transform 0.4s ease;
+	}
+
+	.project-card:hover::before {
+		transform: scaleX(1);
+	}
+
+	.project-card:hover {
+		border-color: var(--border-hover);
+		box-shadow: 0 4px 30px rgba(0, 255, 65, 0.05);
+	}
+
+	.card-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 16px;
+	}
+
+	.card-icon {
+		font-size: 1.4rem;
+	}
+
+	.card-links {
+		display: flex;
+		gap: 12px;
+	}
+
+	.card-link {
+		font-size: 0.7rem;
+		color: var(--text-dim);
+		text-decoration: none;
+	}
+
+	.card-link:hover {
+		color: var(--green);
+		text-shadow: none;
+	}
+
+	.card-title {
+		font-size: 1rem;
+		font-weight: 600;
+		color: var(--text-primary);
+		margin-bottom: 12px;
+	}
+
+	.card-desc {
+		font-size: 0.78rem;
+		color: var(--text-dim);
+		line-height: 1.7;
+		margin-bottom: 16px;
+	}
+
+	.card-tags {
+		display: flex;
+		gap: 8px;
+		flex-wrap: wrap;
+	}
+
+	.card-tags span {
+		font-size: 0.65rem;
+		padding: 4px 10px;
+		border: 1px solid var(--border);
+		color: var(--green-dark);
+	}
+
+	/* === EXPERIENCE === */
+	.timeline {
+		position: relative;
+		padding-left: 32px;
+		display: flex;
+		flex-direction: column;
+		gap: 40px;
+	}
+
+	.timeline::before {
+		content: '';
+		position: absolute;
+		left: 7px;
+		top: 0;
+		bottom: 0;
+		width: 1px;
+		background: linear-gradient(to bottom, var(--green-dark), transparent);
+	}
+
+	.timeline-item {
+		position: relative;
+	}
+
+	.timeline-marker {
+		position: absolute;
+		left: -32px;
+		top: 4px;
+		width: 14px;
+		height: 14px;
+		border: 2px solid var(--green-dark);
+		background: var(--bg-primary);
+		border-radius: 2px;
+		transform: rotate(45deg);
+		transition: all 0.3s ease;
+	}
+
+	.timeline-item:hover .timeline-marker {
+		border-color: var(--green);
+		box-shadow: 0 0 12px var(--green-glow);
+		background: rgba(0, 255, 65, 0.1);
+	}
+
+	.timeline-content {
+		border: 1px solid var(--border);
+		padding: 24px;
+		background: var(--bg-card);
+		transition: border-color 0.3s ease;
+	}
+
+	.timeline-item:hover .timeline-content {
+		border-color: var(--border-hover);
+	}
+
+	.timeline-header {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		margin-bottom: 8px;
+		flex-wrap: wrap;
+	}
+
+	.timeline-header h3 {
+		font-size: 0.95rem;
+		color: var(--text-primary);
+		font-weight: 600;
+	}
+
+	.timeline-company {
+		font-size: 0.8rem;
+		color: var(--green);
+	}
+
+	.timeline-date {
+		font-size: 0.7rem;
+		color: var(--green-dark);
+		letter-spacing: 1px;
+		display: block;
+		margin-bottom: 12px;
+	}
+
+	.timeline-desc {
+		font-size: 0.8rem;
+		color: var(--text-dim);
+		line-height: 1.8;
+	}
+
+	/* === CONTACT === */
+	.contact-grid {
+		display: grid;
+		grid-template-columns: 1.5fr 1fr;
+		gap: 48px;
+		align-items: start;
+	}
+
+	.contact-form {
+		margin-top: 16px;
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+	}
+
+	.form-group {
+		display: flex;
+		flex-direction: column;
+		gap: 6px;
+	}
+
+	.form-group label {
+		font-size: 0.75rem;
+		color: var(--text-dim);
+	}
+
+	.form-group input,
+	.form-group textarea {
+		background: rgba(0, 255, 65, 0.03);
+		border: 1px solid var(--border);
+		color: var(--text-primary);
+		font-family: var(--font-mono);
+		font-size: 0.8rem;
+		padding: 10px 14px;
+		outline: none;
+		transition: border-color 0.3s ease;
+		resize: vertical;
+	}
+
+	.form-group input:focus,
+	.form-group textarea:focus {
+		border-color: var(--green-dark);
+		box-shadow: 0 0 10px rgba(0, 255, 65, 0.05);
+	}
+
+	.form-group input::placeholder,
+	.form-group textarea::placeholder {
+		color: var(--text-dim);
+		opacity: 0.5;
+	}
+
+	.btn-submit {
+		align-self: flex-start;
+		padding: 10px 24px;
+		font-size: 0.8rem;
+		font-family: var(--font-mono);
+		background: rgba(0, 255, 65, 0.1);
+		color: var(--green);
+		border: 1px solid var(--green-dark);
+		cursor: pointer;
+		transition: all 0.3s ease;
+	}
+
+	.btn-submit:hover {
+		background: rgba(0, 255, 65, 0.2);
+		box-shadow: 0 0 20px var(--green-glow);
+	}
+
+	.contact-links-title {
+		font-size: 0.85rem;
+		color: var(--green);
+		font-weight: 500;
+		margin-bottom: 20px;
+	}
+
+	.link-list {
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+		margin-bottom: 32px;
+	}
+
+	.link-item {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		padding: 12px 16px;
+		border: 1px solid var(--border);
+		font-size: 0.78rem;
+		color: var(--text-dim);
+		text-decoration: none;
+		transition: all 0.3s ease;
+		background: var(--bg-card);
+	}
+
+	.link-item:hover {
+		border-color: var(--green-dark);
+		color: var(--green);
+		text-shadow: none;
+		background: rgba(0, 255, 65, 0.05);
+	}
+
+	.link-icon {
+		color: var(--green);
+		font-size: 1rem;
+	}
+
+	.pgp-info {
+		margin-top: 24px;
+		padding: 16px;
+		border: 1px solid var(--border);
+		background: var(--bg-card);
+	}
+
+	.pgp-hash {
+		font-size: 0.7rem;
+		color: var(--green-dark);
+		margin-top: 8px;
+		letter-spacing: 0.5px;
+	}
+
+	/* === RESPONSIVE === */
+	@media (max-width: 1024px) {
+		.about-grid,
+		.contact-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.skills-grid,
+		.projects-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	@media (max-width: 768px) {
+		.main-content {
+			margin-left: 0;
+		}
+
+		.hero-content h1 {
+			font-size: 2rem;
+		}
+
+		.hero-cta {
+			flex-direction: column;
+		}
+
+		.about-stats {
+			grid-template-columns: 1fr 1fr;
+		}
+
+		.ascii-block {
+			font-size: 0.4rem;
+		}
+
+		.section {
+			padding: 80px 24px;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.about-stats {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>
