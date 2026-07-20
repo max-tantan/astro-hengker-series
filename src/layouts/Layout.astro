@@ -28,21 +28,97 @@ const { title } = Astro.props;
 
 <style is:global>
 	:root {
+		/* Colors — Brand */
 		--green: #00ff41;
 		--green-dim: #00cc33;
 		--green-dark: #008f11;
 		--green-glow: rgba(0, 255, 65, 0.3);
 		--green-subtle: rgba(0, 255, 65, 0.05);
+
+		/* Colors — Background */
 		--bg-primary: #0a0a0a;
 		--bg-secondary: #0d0d0d;
 		--bg-sidebar: #080808;
 		--bg-card: rgba(0, 255, 65, 0.03);
+		--bg-card-hover: rgba(0, 255, 65, 0.05);
+		--bg-active: rgba(0, 255, 65, 0.08);
+
+		/* Colors — Border */
 		--border: rgba(0, 255, 65, 0.1);
 		--border-hover: rgba(0, 255, 65, 0.25);
+
+		/* Colors — Text */
 		--text-primary: #b0ffb0;
 		--text-dim: #3a7a3a;
-		--sidebar-width: 260px;
+
+		/* Colors — Dots (terminal) */
+		--dot-red: #ff5f56;
+		--dot-yellow: #ffbd2e;
+		--dot-green: #27c93f;
+
+		/* Colors — Glitch */
+		--glitch-red: rgba(255, 0, 64, 0.3);
+		--glitch-cyan: rgba(0, 255, 255, 0.3);
+
+		/* Colors — Scanline */
+		--scanline: rgba(0, 0, 0, 0.03);
+		--scanline-bar: rgba(0, 255, 65, 0.4);
+
+		/* Colors — Shadows */
+		--shadow-sidebar: rgba(0, 0, 0, 0.8);
+
+		/* Spacing Scale */
+		--space-2xs: 2px;
+		--space-xs: 4px;
+		--space-sm: 8px;
+		--space-md: 12px;
+		--space-base: 16px;
+		--space-lg: 20px;
+		--space-xl: 24px;
+		--space-2xl: 28px;
+		--space-3xl: 32px;
+		--space-4xl: 40px;
+		--space-5xl: 48px;
+		--space-6xl: 60px;
+		--space-section: 80px;
+
+		/* Shadows */
+		--shadow-sm: 0 0 8px var(--green-glow);
+		--shadow-md: 0 0 15px rgba(0, 255, 65, 0.05);
+		--shadow-lg: 0 0 20px var(--green-glow);
+		--shadow-card: 0 4px 30px rgba(0, 255, 65, 0.05);
+		--shadow-sidebar-mobile: 4px 0 30px var(--shadow-sidebar);
+
+		/* Motion */
+		--duration-fast: 0.2s;
+		--duration-normal: 0.25s;
+		--duration-slow: 0.3s;
+		--duration-slower: 0.4s;
+		--duration-slowest: 0.6s;
+		--ease-default: ease;
+		--ease-out: ease-out;
+		--ease-in-out: ease-in-out;
+
+		/* Typography */
 		--font-mono: 'Fira Code', 'Share Tech Mono', ui-monospace, 'Cascadia Code', monospace;
+		--text-xs: 0.65rem;
+		--text-sm: 0.7rem;
+		--text-base: 0.78rem;
+		--text-md: 0.85rem;
+		--text-lg: 0.95rem;
+		--text-xl: 1.1rem;
+		--text-2xl: clamp(1.8rem, 4vw, 2.8rem);
+		--text-hero: clamp(2.5rem, 6vw, 4rem);
+
+		/* Layout */
+		--sidebar-width: 260px;
+		--avatar-size: 100px;
+		--avatar-ring-gap: 4px;
+		--avatar-segment: 40px;
+		--dot-size: 8px;
+		--cursor-width: 2px;
+		--scrollbar-width: 6px;
+		--section-title-underline: 60px;
 	}
 
 	*,
@@ -69,11 +145,11 @@ const { title } = Astro.props;
 
 	::selection {
 		background: var(--green);
-		color: #000;
+		color: var(--bg-primary);
 	}
 
 	::-webkit-scrollbar {
-		width: 6px;
+		width: var(--scrollbar-width);
 	}
 
 	::-webkit-scrollbar-track {
@@ -92,11 +168,19 @@ const { title } = Astro.props;
 	a {
 		color: var(--green);
 		text-decoration: none;
-		transition: all 0.2s ease;
+		transition: all var(--duration-fast) var(--ease-default);
 	}
 
 	a:hover {
-		text-shadow: 0 0 8px var(--green-glow);
+		text-shadow: var(--shadow-sm);
+	}
+
+	/* React Icons */
+	[class*="react-icons"] svg,
+	svg.icon-svg {
+		color: var(--green);
+		fill: currentColor;
+		vertical-align: middle;
 	}
 
 	@keyframes blink {
@@ -136,7 +220,7 @@ const { title } = Astro.props;
 
 	.section {
 		min-height: 100vh;
-		padding: 80px 60px 80px 40px;
+		padding: var(--space-section) var(--space-6xl) var(--space-section) var(--space-6xl);
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -144,18 +228,18 @@ const { title } = Astro.props;
 	}
 
 	.section-label {
-		font-size: 0.7rem;
+		font-size: var(--text-sm);
 		color: var(--green-dark);
 		text-transform: uppercase;
-		letter-spacing: 4px;
-		margin-bottom: 8px;
+		letter-spacing: var(--space-4xl);
+		margin-bottom: var(--space-sm);
 	}
 
 	.section-title {
-		font-size: clamp(1.8rem, 4vw, 2.8rem);
+		font-size: var(--text-2xl);
 		color: var(--green);
 		font-weight: 700;
-		margin-bottom: 40px;
+		margin-bottom: var(--space-4xl);
 		position: relative;
 		display: inline-block;
 		width: fit-content;
@@ -166,25 +250,25 @@ const { title } = Astro.props;
 		position: absolute;
 		bottom: -8px;
 		left: 0;
-		width: 60px;
+		width: var(--section-title-underline);
 		height: 2px;
 		background: var(--green);
-		box-shadow: 0 0 10px var(--green-glow);
+		box-shadow: var(--shadow-sm);
 	}
 
 	.section-title .cursor {
 		display: inline-block;
-		width: 2px;
+		width: var(--cursor-width);
 		height: 1em;
 		background: var(--green);
-		margin-left: 4px;
+		margin-left: var(--space-xs);
 		animation: blink 1s step-end infinite;
 		vertical-align: text-bottom;
 	}
 
 	@media (max-width: 768px) {
 		.section {
-			padding: 60px 20px;
+			padding: var(--space-6xl) var(--space-lg);
 		}
 	}
 </style>

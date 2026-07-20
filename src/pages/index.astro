@@ -2,6 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import Sidebar from '../components/Sidebar.astro';
 import MatrixRain from '../components/MatrixRain.astro';
+import { BoltIcon, LockIcon, ChartIcon, GlobeIcon } from '../components/ProjectIcon';
+import { GithubIcon, LinkedinIcon, TwitterIcon, EmailIcon } from '../components/ContactIcon';
 ---
 
 <Layout title="root@portfolio:~">
@@ -181,7 +183,7 @@ import MatrixRain from '../components/MatrixRain.astro';
 			<div class="projects-grid">
 				<article class="project-card reveal" data-delay="200">
 					<div class="card-header">
-						<span class="card-icon">⚡</span>
+						<span class="card-icon"><BoltIcon client:load /></span>
 						<div class="card-links">
 							<a href="#" class="card-link">source</a>
 							<a href="#" class="card-link">live ↗</a>
@@ -201,7 +203,7 @@ import MatrixRain from '../components/MatrixRain.astro';
 
 				<article class="project-card reveal" data-delay="300">
 					<div class="card-header">
-						<span class="card-icon">🔐</span>
+						<span class="card-icon"><LockIcon client:load /></span>
 						<div class="card-links">
 							<a href="#" class="card-link">source</a>
 							<a href="#" class="card-link">live ↗</a>
@@ -221,7 +223,7 @@ import MatrixRain from '../components/MatrixRain.astro';
 
 				<article class="project-card reveal" data-delay="400">
 					<div class="card-header">
-						<span class="card-icon">📊</span>
+						<span class="card-icon"><ChartIcon client:load /></span>
 						<div class="card-links">
 							<a href="#" class="card-link">source</a>
 							<a href="#" class="card-link">live ↗</a>
@@ -241,7 +243,7 @@ import MatrixRain from '../components/MatrixRain.astro';
 
 				<article class="project-card reveal" data-delay="500">
 					<div class="card-header">
-						<span class="card-icon">🌐</span>
+						<span class="card-icon"><GlobeIcon client:load /></span>
 						<div class="card-links">
 							<a href="#" class="card-link">source</a>
 							<a href="#" class="card-link">live ↗</a>
@@ -354,19 +356,19 @@ import MatrixRain from '../components/MatrixRain.astro';
 					</h3>
 					<div class="link-list">
 						<a href="#" class="link-item reveal" data-delay="300">
-							<span class="link-icon">⌘</span>
+							<span class="link-icon"><GithubIcon client:load /></span>
 							<span>github.com/johndoe</span>
 						</a>
 						<a href="#" class="link-item reveal" data-delay="350">
-							<span class="link-icon">⌘</span>
+							<span class="link-icon"><LinkedinIcon client:load /></span>
 							<span>linkedin.com/in/johndoe</span>
 						</a>
 						<a href="#" class="link-item reveal" data-delay="400">
-							<span class="link-icon">⌘</span>
+							<span class="link-icon"><TwitterIcon client:load /></span>
 							<span>twitter.com/johndoe</span>
 						</a>
 						<a href="#" class="link-item reveal" data-delay="450">
-							<span class="link-icon">⌘</span>
+							<span class="link-icon"><EmailIcon client:load /></span>
 							<span>hello@johndoe.dev</span>
 						</a>
 					</div>
@@ -426,6 +428,26 @@ import MatrixRain from '../components/MatrixRain.astro';
 			);
 
 			reveals.forEach((el) => observer.observe(el));
+
+			// === POP-IN (skill tags) ===
+			const popIns = document.querySelectorAll('.pop-in');
+
+			const popObserver = new IntersectionObserver(
+				(entries) => {
+					entries.forEach((entry) => {
+						if (entry.isIntersecting) {
+							const delay = parseInt(entry.target.getAttribute('data-delay') || '0');
+							setTimeout(() => {
+								entry.target.classList.add('visible');
+							}, delay);
+							popObserver.unobserve(entry.target);
+						}
+					});
+				},
+				{ threshold: 0.1 }
+			);
+
+			popIns.forEach((el) => popObserver.observe(el));
 		}
 
 		// === TYPING ANIMATION ===
@@ -559,8 +581,8 @@ import MatrixRain from '../components/MatrixRain.astro';
 		z-index: 50;
 		background: repeating-linear-gradient(
 			0deg,
-			rgba(0, 0, 0, 0.03) 0px,
-			rgba(0, 0, 0, 0.03) 1px,
+			var(--scanline) 0px,
+			var(--scanline) 1px,
 			transparent 1px,
 			transparent 2px
 		);
@@ -569,8 +591,8 @@ import MatrixRain from '../components/MatrixRain.astro';
 	/* === REVEAL ANIMATION === */
 	.reveal {
 		opacity: 0;
-		transform: translateY(24px);
-		transition: opacity 0.6s ease, transform 0.6s ease;
+		transform: translateY(var(--space-xl));
+		transition: opacity var(--duration-slowest) var(--ease-default), transform var(--duration-slowest) var(--ease-default);
 	}
 
 	.reveal.visible {
@@ -581,8 +603,8 @@ import MatrixRain from '../components/MatrixRain.astro';
 	/* === POP IN === */
 	.pop-in {
 		opacity: 0;
-		transform: scale(0.8) translateY(8px);
-		transition: opacity 0.4s ease, transform 0.4s ease;
+		transform: scale(0.8) translateY(var(--space-sm));
+		transition: opacity var(--duration-slower) var(--ease-default), transform var(--duration-slower) var(--ease-default);
 	}
 
 	.pop-in.visible {
@@ -598,7 +620,7 @@ import MatrixRain from '../components/MatrixRain.astro';
 	.hero-content {
 		display: flex;
 		flex-direction: column;
-		gap: 40px;
+		gap: var(--space-xl);
 		max-width: 800px;
 	}
 
@@ -606,30 +628,30 @@ import MatrixRain from '../components/MatrixRain.astro';
 		border: 1px solid var(--border);
 		border-radius: 8px;
 		overflow: hidden;
-		background: rgba(0, 0, 0, 0.4);
+		background: var(--bg-card);
 	}
 
 	.terminal-bar {
-		padding: 10px 16px;
+		padding: var(--space-sm) var(--space-md);
 		background: rgba(0, 255, 65, 0.03);
 		border-bottom: 1px solid var(--border);
-		font-size: 0.7rem;
+		font-size: var(--text-xs);
 		color: var(--text-dim);
 	}
 
 	.terminal-body {
-		padding: 24px;
+		padding: var(--space-lg);
 	}
 
 	.terminal-line {
-		font-size: 0.8rem;
+		font-size: var(--text-sm);
 		color: var(--text-dim);
-		margin-bottom: 8px;
+		margin-bottom: var(--space-sm);
 	}
 
 	.prompt-symbol {
 		color: var(--green);
-		margin-right: 8px;
+		margin-right: var(--space-sm);
 	}
 
 	.type-target {
